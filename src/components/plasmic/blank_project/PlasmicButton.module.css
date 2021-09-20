@@ -1,0 +1,10 @@
+.root {
+  font-family: Revalia;
+  color: #ffffff;
+  background: #bf6c6c;
+  position: relative;
+  padding: 5px 10px;
+}
+.root:hover {
+  background: #564d4d;
+}
