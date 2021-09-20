@@ -49,7 +49,6 @@ export const PlasmicHomepage__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
-  text?: p.Flex<"div">;
   freeBox?: p.Flex<"div">;
   button?: p.Flex<typeof Button>;
 };
@@ -85,18 +84,6 @@ function PlasmicHomepage__RenderFunc(props: {
           )}
         >
           <div
-            data-plasmic-name={"text"}
-            data-plasmic-override={overrides.text}
-            className={classNames(
-              defaultcss.all,
-              defaultcss.__wab_text,
-              sty.text
-            )}
-          >
-            {"Welcome to your first page."}
-          </div>
-
-          <div
             data-plasmic-name={"freeBox"}
             data-plasmic-override={overrides.freeBox}
             className={classNames(defaultcss.all, sty.freeBox)}
@@ -114,8 +101,7 @@ function PlasmicHomepage__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "text", "freeBox", "button"],
-  text: ["text"],
+  root: ["root", "freeBox", "button"],
   freeBox: ["freeBox", "button"],
   button: ["button"]
 } as const;
@@ -124,7 +110,6 @@ type DescendantsType<T extends NodeNameType> =
   typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
-  text: "div";
   freeBox: "div";
   button: typeof Button;
 };
@@ -190,7 +175,6 @@ export const PlasmicHomepage = Object.assign(
   makeNodeComponent("root"),
   {
     // Helper components rendering sub-elements
-    text: makeNodeComponent("text"),
     freeBox: makeNodeComponent("freeBox"),
     button: makeNodeComponent("button"),
 

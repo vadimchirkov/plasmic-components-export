@@ -7,11 +7,6 @@
   min-width: 0;
   min-height: 0;
 }
-.text {
-  position: relative;
-  font-size: 32px;
-  padding: 32px;
-}
 .freeBox {
   display: flex;
   position: relative;
